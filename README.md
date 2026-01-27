@@ -1,10 +1,12 @@
 # Project Overview
+
 This research and development project focuses on the automatic and accurate detection of deforestation in critical regions of Brazil: the Brazilian Legal Amazon and the Cerrado. Utilizing advanced Computer Vision and Deep Learning techniques, specifically with the PyTorch framework, we developed semantic segmentation models capable of identifying deforested areas from multispectral satellite images.
 
 The growing impact of deforestation on biodiversity and the global climate demands efficient monitoring solutions. Our goal is to provide a modular and robust tool that assists researchers, environmental agencies, and policymakers in the rapid identification of deforestation events, contributing to the conservation of these vital biomes.
 The current project contains the scripts to perform a change detection classification for remote sensing data, specifically for deforestation detection in two Brazilian biomes, the Amazon rainforest(Brazilian Legal Amazon) and Brazilian savannah (Cerrado). Several Neural Networks architectures have been included for use.
 
 ✨ Highlights and Key Features
+
 Semantic Segmentation Models: Implementation and experimentation with state-of-the-art architectures (e.g., U-Net, DeepLabV3+, Transformer-based) optimized for deforestation detection and diferent backbones.
 Multi-Biome Data: Use of a comprehensive dataset containing satellite imagery (Landsat) and deforestation annotations from three distinct regions of the Brazilian Legal Amazon and representative areas of the Cerrado.
 PyTorch Framework: Full development of the training and inference pipeline in PyTorch, ensuring flexibility, performance, and ease of experimentation.
@@ -13,6 +15,7 @@ Performance Metrics: Rigorous evaluation of models using segmentation metrics (I
 Results Visualization: Generation of deforestation maps and confidence visualizations to facilitate the interpretation of model results.
 
 🚀 Getting Started
+
 These instructions will guide you through setting up the development environment, obtaining the data, and running the code to train or infer models.
 
 Prerequisites
