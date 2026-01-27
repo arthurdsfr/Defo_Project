@@ -1,4 +1,7 @@
-# Deforestation_Detection
+# Project Overview
+This research and development project focuses on the automatic and accurate detection of deforestation in critical regions of Brazil: the Brazilian Legal Amazon and the Cerrado. Utilizing advanced Computer Vision and Deep Learning techniques, specifically with the PyTorch framework, we developed semantic segmentation models capable of identifying deforested areas from multispectral satellite images.
+
+The growing impact of deforestation on biodiversity and the global climate demands efficient monitoring solutions. Our goal is to provide a modular and robust tool that assists researchers, environmental agencies, and policymakers in the rapid identification of deforestation events, contributing to the conservation of these vital biomes.
 The current project contains the scripts to perform a change detection classification for remote sensing data, specifically for deforestation detection in two Brazilian biomes, the Amazon rainforest(Brazilian Legal Amazon) and Brazilian savannah (Cerrado). Several Neural Networks architectures have been included for use.
 
 # Train and Test
