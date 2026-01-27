@@ -34,3 +34,54 @@ Such implementation has been evaluated in a change detection task namely defores
 Model Training and Evaluating
 
 To train a segmentation model for the Legal Amazon and/or Cerrado, use the execute.py script wehre you can configure training parameters, model architecture, and data paths. Then, training, testing and metrics computation scripts will be executed sequentially.
+
+📂 # Project Structure
+
+The following folder organization is designed to promote modularity, scalability, and clarity, essential characteristics in Computer Vision and Deep Learning projects.
+
+.
+├── data                              # Contains custom PyTorch Dataset definitions and related utilities
+│   └── DeforestationDataset.py       # Custom PyTorch Dataset for loading deforestation imagery and masks
+├── deeplab                           # Implementation of DeepLabV3+ semantic segmentation model
+│   ├── aspp.py                       # Atrous Spatial Pyramid Pooling (ASPP) module
+│   ├── backbones                     # Various backbone networks for DeepLab (e.g., encoders)
+│   │   ├── drn.py                    # Dilated Residual Network (DRN) backbone
+│   │   ├── __init__.py               # Python package initialization
+│   │   ├── mobilenet.py              # MobileNet backbone
+│   │   ├── resnet.py                 # ResNet backbone
+│   │   └── xception.py               # Xception backbone
+│   ├── decoder.py                    # DeepLab's decoder module
+│   ├── deeplab.py                    # Main DeepLabV3+ model definition
+│   └── sync_batchnorm                # Synchronized Batch Normalization implementation
+│       ├── batchnorm.py              # Synchronized Batch Normalization layer
+│       ├── comm.py                   # Communication utilities for distributed sync_bn
+│       ├── __init__.py               # Python package initialization
+│       ├── replicate.py              # Module for replicating models across GPUs with sync_bn
+│       └── unittest.py               # Unit tests for sync_batchnorm (can be ignored during normal use)
+├── dino                              # DINO (self-supervised Vision Transformer) related implementations
+│   ├── utils.py                      # Utility functions for DINO (e.g., data augmentation, logging)
+│   └── vision_transformer.py         # Vision Transformer (ViT) model implementation used in DINO
+├── get_metrics.py                    # Script to calculate and report various evaluation metrics
+├── get_visuals.py                    # Script to generate visual outputs (e.g., predicted masks, comparisons)
+├── models                            # Generic model components or wrappers
+│   ├── Decoder.py                    # A generic decoder component (potentially shared or for other models)
+│   ├── FeatureExtractor.py           # A generic feature extractor component (encoder-like)
+│   └── models.py                     # Main entry point or wrapper for different model configurations
+├── options                           # Centralized configuration management using argparse
+│   ├── baseoptions.py                # Base class for common command-line arguments
+│   ├── deeplaboptions.py             # Specific options for DeepLab models
+│   ├── deforestationoptions.py       # General options related to the deforestation dataset/task
+│   ├── dinooptions.py                # Specific options for DINO-related configurations
+│   ├── testoptions.py                # Options for the testing script
+│   ├── trainoptions.py               # Options for the training script
+│   └── visualoptions.py              # Options for visualization scripts
+├── Prove.py                          # Script for demonstration, proof-of-concept, or specific testing (purpose to be clarified)
+├── README.md                         # This project description file
+├── test.py                           # Main script for model inference and testing
+├── train.py                          # Main script for model training
+├── utils                             # Collection of utility functions
+│   ├── CustomLosses.py               # Implementations of custom loss functions for segmentation
+│   └── tools.py                      # General utility functions and helpers
+└── vnet                              # Implementation of V-Net semantic segmentation model
+    ├── decoder.py                    # V-Net's decoder module
+    └── vnet.py                       # Main V-Net model definition
