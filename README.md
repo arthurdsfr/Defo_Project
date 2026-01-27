@@ -39,6 +39,7 @@ To train a segmentation model for the Legal Amazon and/or Cerrado, use the execu
 
 The following folder organization is designed to promote modularity, scalability, and clarity, essential characteristics in Computer Vision and Deep Learning projects.
 
+```
 .
 ├── data                              # Contains custom PyTorch Dataset definitions and related utilities
 │   └── DeforestationDataset.py       # Custom PyTorch Dataset for loading deforestation imagery and masks
@@ -85,3 +86,4 @@ The following folder organization is designed to promote modularity, scalability
 └── vnet                              # Implementation of V-Net semantic segmentation model
     ├── decoder.py                    # V-Net's decoder module
     └── vnet.py                       # Main V-Net model definition
+```
