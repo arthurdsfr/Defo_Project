@@ -443,7 +443,7 @@ class AMAZON_PA():
         
         self.load_images()
         self.load_deforestation_refers()
-        self.load_clusters_reference()
+        
         self.image_t1, self.image_t2, self.scaler = normalize(self.image_t1, self.image_t2)
         if self.args.phase == 'train' or self.args.phase == 'get_metrics':
             self.setmasks = mask_creation(self.reference.shape[0], self.reference.shape[1], 
@@ -499,7 +499,7 @@ class AMAZON_RO():
         
         self.load_images()
         self.load_deforestation_refers()
-        self.load_clusters_reference()
+       
         self.image_t1, self.image_t2, self.scaler = normalize(self.image_t1, self.image_t2)
         if self.args.phase == 'train' or self.args.phase == 'get_metrics':
             self.setmasks = mask_creation(self.reference.shape[0], self.reference.shape[1], 
@@ -554,7 +554,7 @@ class CERRADO_MA():
         self.load_images()
         
         self.load_deforestation_refers()
-        self.load_clusters_reference()
+        
         self.image_t1, self.image_t2, self.scaler = normalize(self.image_t1, self.image_t2)
         if self.args.phase == 'train' or self.args.phase == 'get_metrics':
             self.setmasks = mask_creation(self.reference.shape[0], self.reference.shape[1], 
