@@ -439,16 +439,20 @@ class AMAZON_PA():
         self.args.vertical_blocks = 5
         self.TRAIN_TILES = np.array([1, 7, 9, 13])
         self.VALID_TILES = np.array([5, 12])
-        self.UNDESIRED_TILES = []
+        self.UNDESIRED_TILES = np.array([], dtype=np.int32)
         
         self.load_images()
         self.load_deforestation_refers()
         
         self.image_t1, self.image_t2, self.scaler = normalize(self.image_t1, self.image_t2)
         if self.args.phase == 'train' or self.args.phase == 'get_metrics':
-            self.setmasks = mask_creation(self.reference.shape[0], self.reference.shape[1], 
-                                            self.args.horizontal_blocks, self.args.vertical_blocks,
-                                            self.TRAIN_TILES, self.VALID_TILES, self.UNDESIRED_TILES)  
+            if ssl_mode:
+                # SSL pretraining is image-only, so we keep all pixels as train set.
+                self.setmasks = np.ones((self.reference.shape[0], self.reference.shape[1]), dtype=np.uint8)
+            else:
+                self.setmasks = mask_creation(self.reference.shape[0], self.reference.shape[1], 
+                                                self.args.horizontal_blocks, self.args.vertical_blocks,
+                                                self.TRAIN_TILES, self.VALID_TILES, self.UNDESIRED_TILES)
     def load_images(self):
         print("Loading the images")
         self.image_t1 = np.load(self.imaget1_path)[:,1:1099,:].astype(np.float32)
@@ -493,18 +497,28 @@ class AMAZON_RO():
         self.args.vertical_blocks = 10
         self.TRAIN_TILES = np.array([2, 6, 13, 24, 28, 35, 37, 46, 47, 53, 58, 60, 64, 71, 75, 82, 86, 88, 93])
         self.VALID_TILES = np.array([8, 11, 26, 49, 78])
-        self.UNDESIRED_TILES = []
+        self.UNDESIRED_TILES = np.array([], dtype=np.int32)
         
     
         
         self.load_images()
-        self.load_deforestation_refers()
+        task_name = str(getattr(self.args, "task", "")).lower()
+        self.ssl_mode = ("ssl" in task_name) or bool(getattr(self.args, "ssl_only", False))
+        if self.ssl_mode:
+            print("[AMAZON_RO] SSL mode detected. Skipping REFERENCES loading and using image-only placeholders.")
+            self._create_ssl_placeholders()
+        else:
+            self.load_deforestation_refers()
        
         self.image_t1, self.image_t2, self.scaler = normalize(self.image_t1, self.image_t2)
         if self.args.phase == 'train' or self.args.phase == 'get_metrics':
-            self.setmasks = mask_creation(self.reference.shape[0], self.reference.shape[1], 
-                                            self.args.horizontal_blocks, self.args.vertical_blocks,
-                                            self.TRAIN_TILES, self.VALID_TILES, self.UNDESIRED_TILES)
+            if self.ssl_mode:
+                # SSL pretraining is image-only; use all pixels as train partition.
+                self.setmasks = np.ones((self.reference.shape[0], self.reference.shape[1]), dtype=np.uint8)
+            else:
+                self.setmasks = mask_creation(self.reference.shape[0], self.reference.shape[1], 
+                                                self.args.horizontal_blocks, self.args.vertical_blocks,
+                                                self.TRAIN_TILES, self.VALID_TILES, self.UNDESIRED_TILES)
             
     def load_images(self):
         print("Loading the images")
@@ -533,6 +547,12 @@ class AMAZON_RO():
         self.curn_reference[self.curn_reference == 2] = 255
         self.curn_reference[self.past_reference == 1] = 255
         self.reference = self.curn_reference.copy()  
+
+    def _create_ssl_placeholders(self):
+        h, w = self.image_t1.shape[0], self.image_t1.shape[1]
+        self.past_reference = np.zeros((h, w), dtype=np.uint8)
+        self.curn_reference = np.zeros((h, w), dtype=np.uint8)
+        self.reference = np.zeros((h, w), dtype=np.uint8)
     
 
 class CERRADO_MA():
