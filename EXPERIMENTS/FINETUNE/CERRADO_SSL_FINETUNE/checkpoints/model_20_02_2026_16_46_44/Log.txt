@@ -1,0 +1,143 @@
+--------------------------------------------------
+Epoch 0/20
+Training...
+Task Classification results:
+epoch 0 average loss: 0.0914 accuracy: 97.32 precision: 93.79 recall: 98.17 F1-Score: 95.78 mIoU: 92.02
+Validating...
+epoch 0 average loss: 0.1221 accuracy: 98.06 precision: 96.59 recall: 97.17 F1-Score: 96.87 mIoU: 94.00
+Best model saved with F1 score:  96.87
+--------------------------------------------------
+Epoch 1/20
+Training...
+Task Classification results:
+epoch 1 average loss: 0.0272 accuracy: 99.54 precision: 98.82 recall: 99.67 F1-Score: 99.24 mIoU: 98.50
+Validating...
+epoch 1 average loss: 0.1284 accuracy: 97.80 precision: 96.65 recall: 96.18 F1-Score: 96.41 mIoU: 93.16
+--------------------------------------------------
+Epoch 2/20
+Training...
+Task Classification results:
+epoch 2 average loss: 0.0151 accuracy: 99.78 precision: 99.45 recall: 99.84 F1-Score: 99.64 mIoU: 99.29
+Validating...
+epoch 2 average loss: 0.0786 accuracy: 97.83 precision: 95.58 recall: 97.63 F1-Score: 96.56 mIoU: 93.43
+--------------------------------------------------
+Epoch 3/20
+Training...
+Task Classification results:
+epoch 3 average loss: 0.0097 accuracy: 99.88 precision: 99.68 recall: 99.91 F1-Score: 99.79 mIoU: 99.59
+Validating...
+epoch 3 average loss: 0.0976 accuracy: 98.38 precision: 97.81 recall: 96.89 F1-Score: 97.34 mIoU: 94.88
+Best model saved with F1 score:  97.34
+--------------------------------------------------
+Epoch 4/20
+Training...
+Task Classification results:
+epoch 4 average loss: 0.0071 accuracy: 99.91 precision: 99.77 recall: 99.94 F1-Score: 99.85 mIoU: 99.70
+Validating...
+epoch 4 average loss: 0.0642 accuracy: 97.71 precision: 95.18 recall: 97.72 F1-Score: 96.39 mIoU: 93.11
+--------------------------------------------------
+Epoch 5/20
+Training...
+Task Classification results:
+epoch 5 average loss: 0.0061 accuracy: 99.93 precision: 99.81 recall: 99.94 F1-Score: 99.88 mIoU: 99.76
+Validating...
+epoch 5 average loss: 0.1021 accuracy: 98.29 precision: 97.65 recall: 96.78 F1-Score: 97.21 mIoU: 94.63
+--------------------------------------------------
+Epoch 6/20
+Training...
+Task Classification results:
+epoch 6 average loss: 0.0040 accuracy: 99.96 precision: 99.91 recall: 99.98 F1-Score: 99.94 mIoU: 99.88
+Validating...
+epoch 6 average loss: 0.1649 accuracy: 97.90 precision: 97.97 recall: 95.17 F1-Score: 96.49 mIoU: 93.31
+--------------------------------------------------
+Epoch 7/20
+Training...
+Task Classification results:
+epoch 7 average loss: 0.0030 accuracy: 99.98 precision: 99.95 recall: 99.99 F1-Score: 99.97 mIoU: 99.94
+Validating...
+epoch 7 average loss: 0.1001 accuracy: 98.23 precision: 97.28 recall: 96.96 F1-Score: 97.12 mIoU: 94.46
+--------------------------------------------------
+Epoch 8/20
+Training...
+Task Classification results:
+epoch 8 average loss: 0.0033 accuracy: 99.96 precision: 99.89 recall: 99.97 F1-Score: 99.93 mIoU: 99.85
+Validating...
+epoch 8 average loss: 0.1279 accuracy: 98.36 precision: 98.55 recall: 96.12 F1-Score: 97.28 mIoU: 94.76
+--------------------------------------------------
+Epoch 9/20
+Training...
+Task Classification results:
+epoch 9 average loss: 0.0024 accuracy: 99.98 precision: 99.95 recall: 99.99 F1-Score: 99.97 mIoU: 99.93
+Validating...
+epoch 9 average loss: 0.0610 accuracy: 99.09 precision: 98.86 recall: 98.16 F1-Score: 98.51 mIoU: 97.08
+Best model saved with F1 score:  98.51
+--------------------------------------------------
+Epoch 10/20
+Training...
+Task Classification results:
+epoch 10 average loss: 0.0020 accuracy: 99.98 precision: 99.96 recall: 99.99 F1-Score: 99.97 mIoU: 99.95
+Validating...
+epoch 10 average loss: 0.2028 accuracy: 97.48 precision: 98.20 recall: 93.65 F1-Score: 95.73 mIoU: 91.94
+--------------------------------------------------
+Epoch 11/20
+Training...
+Task Classification results:
+epoch 11 average loss: 0.0017 accuracy: 99.99 precision: 99.98 recall: 99.99 F1-Score: 99.99 mIoU: 99.97
+Validating...
+epoch 11 average loss: 0.0982 accuracy: 98.56 precision: 98.32 recall: 96.99 F1-Score: 97.64 mIoU: 95.42
+--------------------------------------------------
+Epoch 12/20
+Training...
+Task Classification results:
+epoch 12 average loss: 0.0014 accuracy: 100.00 precision: 99.99 recall: 100.00 F1-Score: 99.99 mIoU: 99.99
+Validating...
+epoch 12 average loss: 0.0961 accuracy: 98.72 precision: 98.45 recall: 97.36 F1-Score: 97.90 mIoU: 95.91
+--------------------------------------------------
+Epoch 13/20
+Training...
+Task Classification results:
+epoch 13 average loss: 0.0013 accuracy: 100.00 precision: 99.99 recall: 100.00 F1-Score: 99.99 mIoU: 99.98
+Validating...
+epoch 13 average loss: 0.0972 accuracy: 98.57 precision: 98.20 recall: 97.14 F1-Score: 97.66 mIoU: 95.46
+--------------------------------------------------
+Epoch 14/20
+Training...
+Task Classification results:
+epoch 14 average loss: 0.0011 accuracy: 100.00 precision: 99.99 recall: 100.00 F1-Score: 100.00 mIoU: 99.99
+Validating...
+epoch 14 average loss: 0.1160 accuracy: 98.43 precision: 98.14 recall: 96.74 F1-Score: 97.42 mIoU: 95.03
+--------------------------------------------------
+Epoch 15/20
+Training...
+Task Classification results:
+epoch 15 average loss: 0.0011 accuracy: 100.00 precision: 99.99 recall: 100.00 F1-Score: 99.99 mIoU: 99.99
+Validating...
+epoch 15 average loss: 0.0990 accuracy: 98.57 precision: 98.12 recall: 97.23 F1-Score: 97.67 mIoU: 95.48
+--------------------------------------------------
+Epoch 16/20
+Training...
+Task Classification results:
+epoch 16 average loss: 0.0010 accuracy: 100.00 precision: 100.00 recall: 100.00 F1-Score: 100.00 mIoU: 99.99
+Validating...
+epoch 16 average loss: 0.1291 accuracy: 98.35 precision: 98.19 recall: 96.43 F1-Score: 97.28 mIoU: 94.76
+--------------------------------------------------
+Epoch 17/20
+Training...
+Task Classification results:
+epoch 17 average loss: 0.0010 accuracy: 100.00 precision: 100.00 recall: 100.00 F1-Score: 100.00 mIoU: 99.99
+Validating...
+epoch 17 average loss: 0.1106 accuracy: 98.47 precision: 98.11 recall: 96.88 F1-Score: 97.48 mIoU: 95.13
+--------------------------------------------------
+Epoch 18/20
+Training...
+Task Classification results:
+epoch 18 average loss: 0.0009 accuracy: 100.00 precision: 100.00 recall: 100.00 F1-Score: 100.00 mIoU: 100.00
+Validating...
+epoch 18 average loss: 0.1157 accuracy: 98.45 precision: 98.12 recall: 96.82 F1-Score: 97.45 mIoU: 95.08
+--------------------------------------------------
+Epoch 19/20
+Training...
+Task Classification results:
+epoch 19 average loss: 0.0009 accuracy: 100.00 precision: 100.00 recall: 100.00 F1-Score: 100.00 mIoU: 99.99
+Validating...
+epoch 19 average loss: 0.1289 accuracy: 98.38 precision: 98.23 recall: 96.48 F1-Score: 97.32 mIoU: 94.84
