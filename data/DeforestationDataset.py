@@ -569,7 +569,7 @@ class CERRADO_MA():
         self.args.vertical_blocks = 3
         self.TRAIN_TILES = np.array([1, 5, 12, 13])
         self.VALID_TILES = np.array([6, 7])
-        self.UNDESIRED_TILES = [] 
+        self.UNDESIRED_TILES = np.array([], dtype=np.int32)
         
         self.load_images()
         

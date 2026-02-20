@@ -9,6 +9,15 @@ from utils import *
 from deeplab.deeplab import DeepLab
 from vnet.vnet import VNet
 
+
+def _safe_torch_load(path, map_location="cpu"):
+    # PyTorch >=2.6 defaults to weights_only=True, which can fail for full checkpoints.
+    try:
+        return torch.load(path, map_location=map_location, weights_only=False)
+    except TypeError:
+        # Backward compatibility for older PyTorch versions.
+        return torch.load(path, map_location=map_location)
+
 class DinoFeaturizer(nn.Module):
     def __init__(self, args):
         super().__init__()
@@ -42,7 +51,7 @@ class DinoFeaturizer(nn.Module):
                 raise ValueError("Unknown arch and patch size")
         print(args.fe_pretrained_weights)
         if args.fe_pretrained_weights != "None":
-            state_dict = torch.load(self.args.fe_pretrained_weights, map_location="cpu")
+            state_dict = _safe_torch_load(self.args.fe_pretrained_weights, map_location="cpu")
             if self.args.phase == 'test' and self.args.freeze_featureextractor:
                 state_dict = state_dict["teacher"]
             elif self.args.phase == 'train':
@@ -126,7 +135,7 @@ class DeepLabFeaturizer(nn.Module):
         self.imagenet_pretrain = self.args.deeplab_imagenet_pretrain
         self.model = DeepLab(backbone=self.backbone, output_stride=self.output_stride, input_channles = self.args.input_nc, pretrained = self.imagenet_pretrain)
         if args.fe_pretrained_weights != "None":
-            state_dict = torch.load(self.args.fe_pretrained_weights, map_location="cpu")
+            state_dict = _safe_torch_load(self.args.fe_pretrained_weights, map_location="cpu")
 
             # remove `module.` prefix
             state_dict = {k.replace("module.", ""): v for k, v in state_dict.items()}
@@ -151,7 +160,7 @@ class VnetFeaturizer(nn.Module):
         self.model = VNet(self.args)
 
         if args.fe_pretrained_weights != "None":
-            state_dict = torch.load(self.args.fe_pretrained_weights, map_location="cpu")
+            state_dict = _safe_torch_load(self.args.fe_pretrained_weights, map_location="cpu")
 
             # remove `module.` prefix
             state_dict = {k.replace("module.", ""): v for k, v in state_dict.items()}

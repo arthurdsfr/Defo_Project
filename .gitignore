@@ -2,3 +2,4 @@
 dataset/
 __pycache__/
 *.pyc
+EXPERIMENTS/SSL_AMAZON/checkpoint_epoch_0100.pth
