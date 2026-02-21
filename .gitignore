@@ -6,3 +6,4 @@ EXPERIMENTS/SSL_AMAZON/checkpoint_epoch_0100.pth
 EXPERIMENTS/FINETUNE/**/feature_extractor.pth
 EXPERIMENTS/FINETUNE/**/segmentation_head.pth
 EXPERIMENTS/FINETUNE/**/predictions_sliding_windows_MA/*.npy
+EXPERIMENTS/FINAL_TEST_PRED/*.npy
